@@ -58,7 +58,7 @@ public:
     }
 };
 int main(){
-
+cout<<"welcome to bank system";
 }
 
 
