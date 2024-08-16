@@ -57,8 +57,8 @@ public:
         return id;
     }
 };
-int main(){
-cout<<"welcome to bank system";
+int main() {
+    cout<<"this is test to merge";
 }
 
 
