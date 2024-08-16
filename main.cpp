@@ -57,8 +57,73 @@ public:
         return id;
     }
 };
+
+class Client : public Person{
+private:
+    double balance;
+public:
+    Client(){
+    this->balance = 0;
+
+    }
+    Client(double balance,int id,string name,string password){
+       this-> balance = balance;
+       this-> id = id;
+       this-> name = name;
+       this-> password = password;
+
+
+
+    }
+ void setbalance(int b){
+    this->balance = balance
+}
+int getbalance(){
+    return balance;
+}
+void deposit(double amount){
+    balance += amount;
+    return balance;
+}
+void withdraw(double amount){
+    if(amount<=balane){
+        balance -= amount;
+    }
+    else(){
+        cout<<"not found"<<endl;
+    }
+    return balance;
+
+}
+void transferto(Client m,double amount){
+ if(amount<=balane){
+        balance -= amount;
+        m.deposit(amount);
+}
+ else(){
+        cout<<"not found"<<endl;
+    }
+
+}
+
+void checkbalance(){
+    return balance;
+}
+
+void display(){
+    cout<<"name     = "<<name;
+    cout<<"id       = "<<id;
+    cout<<"password = "<<password;
+    cout<<"balance  = "<<balance;
+}
+
+
+};
+
+
 int main(){
 cout<<"welcome to bank system";
+cout<<"mazen"<<endl;
 }
 
 
