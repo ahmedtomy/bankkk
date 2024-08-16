@@ -76,37 +76,37 @@ public:
 
     }
  void setbalance(int b){
-    this->balance = balance
+    this->balance = balance;
 }
 int getbalance(){
     return balance;
 }
-void deposit(double amount){
+double deposit(double amount){
     balance += amount;
     return balance;
 }
-void withdraw(double amount){
-    if(amount<=balane){
+double withdraw(double amount){
+    if(amount<=balance){
         balance -= amount;
     }
-    else(){
+    else{
         cout<<"not found"<<endl;
     }
     return balance;
 
 }
 void transferto(Client m,double amount){
- if(amount<=balane){
+ if(amount<=balance){
         balance -= amount;
         m.deposit(amount);
 }
- else(){
+ else{
         cout<<"not found"<<endl;
     }
 
 }
 
-void checkbalance(){
+double checkbalance(){
     return balance;
 }
 
