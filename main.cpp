@@ -59,6 +59,7 @@ public:
 };
 
 
+
 class Client : public Person{
 private:
     double balance;
@@ -117,12 +118,41 @@ void display(){
     cout<<"password = "<<password;
     cout<<"balance  = "<<balance;
 }
+};
+class Employee :public Person  {
+private :
+    //data 
+    double balance;
+public:
+    //con
+    Employee() {
+        balance = 0;
+    }
+    Employee(int i, string n, string p, double b) {
+        id = i;
+        name = n;
+        password = p;
+        balance = b;
+    }
+    //sett
+    void setbalance(double b) {
+        balance = b;
+    }
+    //get 
+    double gitbalance() {
+        return balance;
+    }
+    //methods 
+    void disblay() {
+        cout << "id =" << id << endl;
+        cout << "name =" << name << endl; 
+        cout << "password =" << name << endl;
+        cout << "balance = " << balance << endl;
+    }
 
 
 };
-
-
-int main() {
-    cout << "welcome to bank system";
-    cout << "mazen" << endl;
+int main(){
+cout<<"welcome to bank system";
+cout << "salah essa ";
 }
