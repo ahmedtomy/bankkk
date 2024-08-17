@@ -58,6 +58,7 @@ public:
     }
 };
 
+
 class Client : public Person{
 private:
     double balance;
@@ -121,9 +122,7 @@ void display(){
 };
 
 
-int main(){
-cout<<"welcome to bank system";
-cout<<"mazen"<<endl;
+int main() {
+    cout << "welcome to bank system";
+    cout << "mazen" << endl;
 }
-
-
