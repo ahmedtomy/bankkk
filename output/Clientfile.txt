@@ -1,0 +1,5 @@
+Client ID = 10002
+Name = ahmed
+Password = Porshe911
+Balance = 6500
+==========================

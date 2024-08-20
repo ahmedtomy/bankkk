@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <fstream>
 using namespace std;
 
 bool checkname(const string& str) {
@@ -11,6 +12,7 @@ bool checkname(const string& str) {
     }
     return true;
 }
+
 
 class Validation {
 public:
@@ -115,6 +117,24 @@ public:
         cout << "Password = " << password << endl;
         cout << "Salary = " << salary << endl;
     }
+    void savetofile(){
+        fstream Employeefile;
+        Employeefile.open("Employeefile.txt",ios::out);
+        if (Employeefile.is_open())
+        {
+
+            Employeefile<<"ID = "<<getid()<<endl;
+            Employeefile<<"Name = " <<getname()<<endl;
+            Employeefile<<"Password = " <<getpassword()<<endl;
+            Employeefile<<"Salary ="<<getsalary()<<endl;
+            Employeefile<<"=========================="<<endl;
+            Employeefile.close();
+        }
+        else{
+            cout<<"erorr with file";
+        }
+
+    }
 };
 
 class Admin : public Person {
@@ -150,6 +170,24 @@ public:
         cout << "Password = " << password << endl;
         cout << "Salary = " << salary << endl;
     }
+    void savetofile(){
+        fstream Adminfile;
+        Adminfile.open("Adminfile.txt",ios::out);
+        if (Adminfile.is_open())
+        {
+
+            Adminfile<<"ID = "<<getid()<<endl;
+            Adminfile<<"Name = " <<getname()<<endl;
+            Adminfile<<"Password = " <<getpassword()<<endl;
+            Adminfile<<"Salary ="<<getsalary()<<endl;
+            Adminfile<<"=========================="<<endl;
+            Adminfile.close();
+        }
+        else{
+            cout<<"erorr with file";
+        }
+
+    }
 };
 
 class Client : public Person {
@@ -161,10 +199,16 @@ public:
         balance = 0;
     }
 
-    Client(double balance, int id, string name, string password) : Person(id, name, password) {
+    Client(int id, string name, string password,double balance) : Person(id, name, password) {
         this->balance = balance;
+        
     }
+    
 
+    Client(string name, string password,double balance) : Person(name, password) {
+        this->balance = balance;
+        
+    }
     void setbalance(double b) {
         this->balance = b;
     }
@@ -207,6 +251,25 @@ public:
         cout << "Password = " << password << endl;
         cout << "Balance = " << balance << endl;
     }
+   void savetofile(){
+    fstream Clientfile;
+    Clientfile.open("Clientfile.txt",ios::out);
+    if (Clientfile.is_open())
+    {
+
+    Clientfile<<"Client ID = "<<getid()<<endl;
+    Clientfile<<"Name = " <<getname()<<endl;
+    Clientfile<<"Password = "<<getpassword()<<endl;
+    Clientfile<<"Balance = "<<getbalance()<<endl;
+    Clientfile<<"=========================="<<endl;
+    }
+    else{
+        cout<<"erorr with file";
+    }
+    Clientfile.close();
+    }
+
+    
 };
 
 int main() {
@@ -216,4 +279,9 @@ int main() {
     admin.display();
     Employee employee;
     cout<<employee.getid();
+    Client Client("ahmed","Porshe911",6500);
+    Client.savetofile();
+    admin.savetofile();
+    employee.setsalary(8000);
+    employee.savetofile();
 }
