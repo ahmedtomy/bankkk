@@ -52,6 +52,38 @@ public:
 
 
     }
+    static Employee parseToEmployee(string &line){
+        vector<string> Vector1=split(line);
+        int id = stoi(Vector1[0]);
+        string name = Vector1[1];
+        string password= Vector1[2];
+        double salary= stod(Vector1[3]);
+       
+       Employee Employee(id,name,password,salary);
+       Employee.setsalary(salary);
+       Employee.setname(name);
+       Employee.setpassword(password);
+
+       return Employee;
+
+    }
+
+    static Admin parseToAdmin(string &line){
+        vector<string> Vector2=split(line);
+        int id = stoi(Vector2[0]);
+        string name = Vector2[1];
+        string password= Vector2[2];
+        double salary= stod(Vector2[3]);
+       
+       Admin admin(id,name,password,salary);
+       admin.setsalary(salary);
+       admin.setname(name);
+       admin.setpassword(password);
+
+       return admin;
+       //inherit parsetoemployee 
+
+    }
 };
 
 

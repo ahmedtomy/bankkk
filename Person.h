@@ -62,7 +62,7 @@ public:
     virtual void display() = 0;
 
 
-    virtual void savetofile(const string& filename) const {
+    virtual void savetofile(const string& filename) {
         fstream file;
         file.open(filename, ios::out | ios::app);
         if (file.is_open()) {

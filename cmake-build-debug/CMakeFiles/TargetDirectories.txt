@@ -1,3 +1,4 @@
-C:/Users/Admin/Desktop/bankbgd/cmake-build-debug/CMakeFiles/bankbgd.dir
-C:/Users/Admin/Desktop/bankbgd/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Admin/Desktop/bankbgd/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/Desktop/bankkk/cmake-build-debug/CMakeFiles/bankbgd.dir
+C:/Users/Admin/Desktop/bankkk/cmake-build-debug/CMakeFiles/new_target.dir
+C:/Users/Admin/Desktop/bankkk/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/bankkk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
