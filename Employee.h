@@ -40,18 +40,18 @@ public:
         cout << "Password = " << password << endl;
         cout << "Salary = " << salary << endl;
     }
-    void savetofile(const string& filename) {
-        Person::savetofile(filename);
-        fstream file;
-        file.open(filename, ios::out | ios::app);
-        if (file.is_open()) {
-            file << getsalary() <<"&"<<endl;
-            file << "==========================" << endl;
-            file.close();
-        } else {
-            cout << "Error with file" << endl;
-        }
-    }
+    // void savetofile(const string& filename) {
+    //     Person::savetofile(filename);
+    //     fstream file;
+    //     file.open(filename, ios::out | ios::app);
+    //     if (file.is_open()) {
+    //         file << getsalary() <<"&"<<endl;
+    //         file << "==========================" << endl;
+    //         file.close();
+    //     } else {
+    //         cout << "Error with file" << endl;
+    //     }
+    // }
 };
 
 

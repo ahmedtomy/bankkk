@@ -9,6 +9,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include"FilesHelper.h"
 using namespace std;
 class Person {
 protected:
@@ -28,7 +29,8 @@ public:
     }
 
     Person(int id, string name, string password) {
-        this->id = id;
+        this->id = (FilesHelper::getlast("ClientLastid"))+1;
+        FilesHelper::savelast("lastid",id+1);
         this->name = name;
         this->password = password;
     }
@@ -62,19 +64,19 @@ public:
     virtual void display() = 0;
 
 
-    virtual void savetofile(const string& filename) {
-        fstream file;
-        file.open(filename, ios::out | ios::app);
-        if (file.is_open()) {
-            file << "ID = " << getid() << "&";
-            file << "Name = " << getname() << "&";
-            file << "Password = " << getpassword() << "&";
-            file << endl;
-        } else {
-            cout << "Error with file" << endl;
-        }
-        file.close();
-    }
+    // virtual void savetofile(const string& filename) {
+    //     fstream file;
+    //     file.open(filename, ios::out | ios::app);
+    //     if (file.is_open()) {
+    //         file << "ID = " << getid() << "&";
+    //         file << "Name = " << getname() << "&";
+    //         file << "Password = " << getpassword() << "&";
+    //         file << endl;
+    //     } else {
+    //         cout << "Error with file" << endl;
+    //     }
+    //     file.close();
+    // }
 
 };
 

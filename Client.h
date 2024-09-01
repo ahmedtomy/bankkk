@@ -66,18 +66,18 @@ public:
         cout << "Password = " << password << endl;
         cout << "Balance = " << balance << endl;
     }
-    void savetofile(const string& filename)  {
-        Person::savetofile(filename);
-        fstream file;
-        file.open(filename, ios::out | ios::app);
-        if (file.is_open()) {
-            file << getbalance() <<"&";
-            file << "==========================" << endl;
-            file.close();
-        } else {
-            cout << "Error with file" << endl;
-        }
-    }
+    // void savetofile(const string& filename)  {
+    //     Person::savetofile(filename);
+    //     fstream file;
+    //     file.open(filename, ios::out | ios::app);
+    //     if (file.is_open()) {
+    //         file << getbalance() <<"&";
+    //         file << "==========================" << endl;
+    //         file.close();
+    //     } else {
+    //         cout << "Error with file" << endl;
+    //     }
+    // }
 
 };
 
