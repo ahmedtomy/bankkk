@@ -5,7 +5,7 @@
 #ifndef BANK_MTB_ADMIN_H
 #define BANK_MTB_ADMIN_H
 
-
+#include "Person.h"
 #include "Employee.h"
 class Admin : public Employee {
 public:
@@ -21,18 +21,18 @@ public:
         cout << "Admin details: " << endl;
         Employee::display();
     }
-    void savetofile(const string &filename) {
-        Person::savetofile(filename);
-        fstream file;
-        file.open(filename, ios::out | ios::app);
-        if (file.is_open()) {
-            file << getsalary() <<"&";
-            file << "==========================" << endl;
-            file.close();
-        } else {
-            cout << "Error with file" << endl;
-        }
-    }
+    // void savetofile(const string &filename) {
+    //     Person::savetofile(filename);
+    //     fstream file;
+    //     file.open(filename, ios::out | ios::app);
+    //     if (file.is_open()) {
+    //         file << getsalary() <<"&";
+    //         file << "==========================" << endl;
+    //         file.close();
+    //     } else {
+    //         cout << "Error with file" << endl;
+    //     }
+    // }
 
 
 };

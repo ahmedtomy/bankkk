@@ -6,13 +6,13 @@
 #define BANK_MTB_EMPLOYEE_H
 #include "Person.h"
 #include <fstream>
-class Employee : public Person {
+class Employee : public Person{
 private:
     double salary;
 
 public:
-    Employee() : Person() {
-        salary = 0;
+    Employee() {
+        salary=0;
     }
 
     Employee(int i, string n, string p, double s):Person(i,n,p) {
@@ -39,6 +39,13 @@ public:
         cout << "Name = " << name << endl;
         cout << "Password = " << password << endl;
         cout << "Salary = " << salary << endl;
+    }
+    friend std::ostream& operator<<(std::ostream& os, const Employee& employee) {
+        os << "Client ID: " << employee.getid() << "\n"
+           << "Name: " << employee.getname() << "\n"
+           << "Password"<<employee.getpassword()<<"\n"
+           << "Salary " << employee.getsalary();
+        return os;
     }
     // void savetofile(const string& filename) {
     //     Person::savetofile(filename);

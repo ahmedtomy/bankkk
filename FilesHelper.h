@@ -52,7 +52,7 @@ static vector<Client> clients;
         ifstream lastidfileIn(file);
         if (!lastidfileIn) {
             cerr << "Unable to open file for reading\n";
-            return;
+            return -1;
         }
 
         // Declare a variable to store the number
@@ -62,7 +62,7 @@ static vector<Client> clients;
         if (!(lastidfileIn >> id)) {
             cerr << "Error reading number from file\n";
             lastidfileIn.close();
-            return;
+            return -1;
         }
         lastidfileIn.close();
 
@@ -100,7 +100,7 @@ static vector<Client> clients;
 
 
 
-static void getclients(string&filename){
+static void getclients(const string&filename){
 // Function to read client data from a file and store it in the global vector
     ifstream file(filename);
 

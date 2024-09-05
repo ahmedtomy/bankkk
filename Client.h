@@ -66,6 +66,14 @@ public:
         cout << "Password = " << password << endl;
         cout << "Balance = " << balance << endl;
     }
+     friend std::ostream& operator<<(std::ostream& os, const Client& client) {
+        os << "Client ID: " << client.getid() << "\n"
+           << "Name: " << client.getname() << "\n"
+           << "Password"<<client.getpassword()<<"\n"
+           << "Balance: " << client.getbalance();
+        return os;
+    }
+    
     // void savetofile(const string& filename)  {
     //     Person::savetofile(filename);
     //     fstream file;
