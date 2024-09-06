@@ -21,6 +21,51 @@ public:
         cout << "Admin details: " << endl;
         Employee::display();
     }
+
+    void addEmployees(Employee &employee){
+     FilesHelper::employees.push_back(employee);       
+    }
+
+
+
+    Employee searchEmployee(int id){
+    for (int i = 0; i < FilesHelper::employees.size(); i++)
+    {
+        if(FilesHelper::employees[i].getid()==id){
+            return FilesHelper::employees[i];
+        }
+    }
+    
+    }
+
+
+
+    void listEmployee(){
+        for (int i = 0; i < FilesHelper::employees.size(); i++)
+        {
+             FilesHelper::employees[i].display();
+        }
+        
+    }
+
+
+
+
+
+    void editEmployee(int id, string name, string password, double salary){
+         for (int i = 0; i < FilesHelper::employees.size(); i++)
+         {
+            if(FilesHelper::employees[i].getid()==id){
+               FilesHelper::employees[i].setname(name);
+               FilesHelper::employees[i].setpassword(password);
+               FilesHelper::employees[i].setsalary(salary);
+            }
+            else{
+                continue;
+            }
+         }
+         
+    }
     // void savetofile(const string &filename) {
     //     Person::savetofile(filename);
     //     fstream file;

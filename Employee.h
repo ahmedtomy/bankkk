@@ -6,6 +6,8 @@
 #define BANK_MTB_EMPLOYEE_H
 #include "Person.h"
 #include <fstream>
+#include "Client.h"
+#include "FilesHelper.h"
 class Employee : public Person{
 private:
     double salary;
@@ -47,6 +49,52 @@ public:
            << "Salary " << employee.getsalary();
         return os;
     }
+
+    void addclient(Client &client){
+     FilesHelper::clients.push_back(client);       
+    }
+
+
+
+    Client searchClient(int id){
+    for (int i = 0; i < FilesHelper::clients.size(); i++)
+    {
+        if(FilesHelper::clients[i].getid()==id){
+            return FilesHelper::clients[i];
+        }
+    }
+    
+    }
+
+
+
+    void listClient(){
+        for (int i = 0; i < FilesHelper::clients.size(); i++)
+        {
+             FilesHelper::clients[i].display();
+        }
+        
+    }
+
+
+
+
+
+    void editClient(int id, string name, string password, double balance){
+         for (int i = 0; i < FilesHelper::clients.size(); i++)
+         {
+            if(FilesHelper::clients[i].getid()==id){
+               FilesHelper::clients[i].setname(name);
+               FilesHelper::clients[i].setpassword(password);
+               FilesHelper::clients[i].setbalance(balance);
+            }
+            else{
+                continue;
+            }
+         }
+         
+    }
+
     // void savetofile(const string& filename) {
     //     Person::savetofile(filename);
     //     fstream file;
