@@ -7,6 +7,7 @@
 
 #include "Person.h"
 #include "Employee.h"
+#include "FilesHelper.h"
 class Admin : public Employee {
 public:
     Admin(int id, string name, string password, double salary)
